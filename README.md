@@ -1,6 +1,5 @@
 # SRE/DEVOPS
 
-# Linux skills & commands checklist for SRE / DevOps
 
 This is a compact reference grouped by topic. Learn commands, options, and practice scenarios for each area.
 
