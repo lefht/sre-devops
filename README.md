@@ -277,20 +277,20 @@ This is a compact reference grouped by topic. Learn commands, options, and pract
 
 # Snippets (one-line examples per section)
 
-- Basics: `user=$(whoami) && echo "user:$user"`
-- File & text processing: `rg -n "ERROR" /var/log || true`
-- Permissions & users: `sudo chown appuser:appgroup /srv/app && sudo chmod 750 /srv/app`
-- Processes & systemd: `sudo systemctl restart nginx && sudo systemctl status nginx --no-pager`
-- Networking: `curl -I https://example.com`
-- Disks & filesystems: `df -h / && du -sh /var/log | sort -h | tail`
-- Storage & backup: `rsync -avz /srv/data/ backup:/srv/data/`
-- Package management & building: `sudo apt update && sudo apt install -y htop`
-- Monitoring & observability: `free -m; uptime`
-- Performance & debugging: `sudo strace -p 1234 -o /tmp/strace.out`
-- Containers & orchestration: `docker run -d --name nginx-test -p 8080:80 nginx:stable`
-- CI/CD & automation: `git checkout -b feature/xyz && git commit --allow-empty -m "wip"`
-- Security & auditing: `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""`
-- High-availability & clustering: `sudo haproxy -c -f /etc/haproxy/haproxy.cfg && sudo systemctl reload haproxy`
-- Troubleshooting playbook items: `sudo journalctl -u mysvc -n 200 --no-pager`
-- Misc & ergonomics: `sudo crontab -l | { cat; echo "0 3 * * * /usr/local/bin/backup.sh"; } | sudo crontab -`
+- Basics: `user=$(whoami) && echo "user:$user"` — prints the current shell user (quick identity check).
+- File & text processing: `rg -n "ERROR" /var/log || true` — search logs for "ERROR" with line numbers, return success even if none found.
+- Permissions & users: `sudo chown appuser:appgroup /srv/app && sudo chmod 750 /srv/app` — set owner/group and restrictive permissions for an app directory.
+- Processes & systemd: `sudo systemctl restart nginx && sudo systemctl status nginx --no-pager` — restart nginx and show immediate status output.
+- Networking: `curl -I https://example.com` — fetch HTTP headers to validate reachability and response code.
+- Disks & filesystems: `df -h / && du -sh /var/log | sort -h | tail` — show root usage and the largest entries under /var/log.
+- Storage & backup: `rsync -avz /srv/data/ backup:/srv/data/` — perform an efficient, compressed sync to a remote backup host.
+- Package management & building: `sudo apt update && sudo apt install -y htop` — refresh package lists and install a monitoring tool.
+- Monitoring & observability: `free -m; uptime` — quick memory and load snapshot for capacity checks.
+- Performance & debugging: `sudo strace -p 1234 -o /tmp/strace.out` — record syscalls of PID 1234 for debugging.
+- Containers & orchestration: `docker run -d --name nginx-test -p 8080:80 nginx:stable` — launch a test nginx container bound to localhost:8080.
+- CI/CD & automation: `git checkout -b feature/xyz && git commit --allow-empty -m "wip"` — create a feature branch and record a WIP commit.
+- Security & auditing: `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""` — create a new ed25519 SSH keypair without a passphrase.
+- High-availability & clustering: `sudo haproxy -c -f /etc/haproxy/haproxy.cfg && sudo systemctl reload haproxy` — validate HAProxy config and reload service if valid.
+- Troubleshooting playbook items: `sudo journalctl -u mysvc -n 200 --no-pager` — view recent logs for a failing service for quick diagnostics.
+- Misc & ergonomics: `sudo crontab -l | { cat; echo "0 3 * * * /usr/local/bin/backup.sh"; } | sudo crontab -` — append a daily root cron job safely.
 
