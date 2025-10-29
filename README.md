@@ -275,6 +275,56 @@ This is a compact reference grouped by topic. Learn commands, options, and pract
     exec > >(tee -a /var/log/myscript.log) 2>&1
     ```
 
+## Snippets (copy-paste)
+
+- Basics / shell
+  - user=$(whoami); echo "user: $user"
+
+- File & text processing
+  - find /var/log -name '*.log' -mtime +30 -print
+
+- Permissions & users
+  - sudo chown appuser:appgroup /srv/app && sudo chmod 750 /srv/app
+
+- Processes & systemd
+  - sudo systemctl status nginx && sudo systemctl restart nginx
+
+- Networking
+  - ip addr show && ip route show
+
+- Disks & filesystems
+  - df -hT / && du -sh /var/log/* | sort -h
+
+- Storage & backup
+  - rsync -av --delete --dry-run /srv/data/ backup:/srv/data/
+
+- Package management & building
+  - sudo apt update && sudo apt install -y htop
+
+- Monitoring & observability
+  - free -m; uptime
+
+- Performance & debugging
+  - sudo strace -p 1234 -o /tmp/strace.out
+
+- Containers & orchestration
+  - docker run -d --name nginx-test -p 8080:80 nginx:stable
+
+- CI/CD & automation
+  - git checkout -b feature/xyz && git add . && git commit -m "feat: xyz"
+
+- Security & auditing
+  - ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
+
+- High-availability & clustering
+  - sudo haproxy -c -f /etc/haproxy/haproxy.cfg && sudo systemctl reload haproxy
+
+- Troubleshooting playbook
+  - sudo systemctl status mysvc || sudo journalctl -u mysvc -n 200 -f
+
+- Misc & ergonomics
+  - sudo crontab -l | { cat; echo "0 3 * * * /usr/local/bin/backup.sh"; } | sudo crontab -
+
 Quick learning exercises:
 - Create a small LAMP stack, create a systemd unit for the app, add health checks.
 - Break and recover: fill disk, then free space and explain steps.
