@@ -1,7 +1,11 @@
 # SRE/DEVOPS
 
-### reverse search 
+### reverse search
 
-`ctrl + r`
+bash```
+
+ctrl + r
+
+```
 
 
