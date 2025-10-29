@@ -1,1 +1,7 @@
-# sre-devops
+# SRE/DEVOPS
+
+### reverse search 
+
+`ctrl + r`
+
+
